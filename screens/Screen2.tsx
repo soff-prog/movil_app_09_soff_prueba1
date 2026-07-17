@@ -36,9 +36,11 @@ export default function Screen2() {
 
 
   return (
-    <View>
-
-      <Text>Leer País</Text>
+    <View style={estiloGlobal.container}>
+    
+          <Text style={estiloGlobal.tituloP}>
+        Leer País
+      </Text>
 
       <TextInput
         placeholder='Ingrese Código'

@@ -42,9 +42,11 @@ export default function Screen3() {
   }
 
   return (
-    <View>
-
-      <Text>Editar / Eliminar País</Text>
+    <View style={estiloGlobal.container}>
+    
+          <Text style={estiloGlobal.tituloP}>
+        Editar / Eliminar País
+      </Text>
 
       <TextInput
         placeholder='Ingrese Código'

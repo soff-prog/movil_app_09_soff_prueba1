@@ -30,4 +30,16 @@ export const estiloGlobal = StyleSheet.create({
     backgroundColor: "#F4F6F7",
     padding: 20,
   },
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#F5F5F5",
+  },
+  tituloP: {
+    fontSize: 28,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 20,
+    color: "#2C3E50",
+  },
 })

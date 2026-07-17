@@ -23,9 +23,9 @@ export default function Screen1() {
   
 
   return (
-    <View style={styles.container}>
+    <View style={estiloGlobal.container}>
 
-      <Text style={styles.titulo}>
+      <Text style={estiloGlobal.tituloP}>
         Registro de Países
       </Text>
 
@@ -67,17 +67,6 @@ export default function Screen1() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#F5F5F5",
-  },
-
-  titulo: {
-    fontSize: 28,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: 20,
-    color: "#2C3E50",
-  },
+  
+  
 })
