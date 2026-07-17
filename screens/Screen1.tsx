@@ -1,0 +1,81 @@
+import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native'
+import React, { useState } from 'react'
+import { ref, set } from 'firebase/database'
+import { db } from '../firebase/Config'
+import { estiloGlobal } from '../styles/EstiloGlobal'
+
+export default function Screen1() {
+
+  const [codigo, setcodigo] = useState(0)
+  const [pais, setpais] = useState("")
+  const [capital, setcapital] = useState("")
+  const [continente, setcontinente] = useState("")
+
+  function gurdarPais(){
+    set(ref(db, 'paises/' + codigo), {
+            pais: pais,
+            capital: capital,
+            continente: continente
+        });
+  }
+  
+
+  return (
+    <View style={styles.container}>
+
+      <Text style={styles.titulo}>
+        Registro de Países
+      </Text>
+
+      <TextInput
+        placeholder="Código del país"
+        style={estiloGlobal.input}
+        value={codigo.toString()}
+        onChangeText={(texto)=> setcodigo(+texto)}
+      />
+
+      <TextInput
+        placeholder="Nombre del país"
+        style={estiloGlobal.input}
+        value={pais}
+        onChangeText={setpais}
+      />
+
+      <TextInput
+        placeholder="Capital"
+        style={estiloGlobal.input}
+        value={capital}
+        onChangeText={setcapital}
+      />
+
+      <TextInput
+        placeholder="Continente"
+        style={estiloGlobal.input}
+        value={continente}
+        onChangeText={setcontinente}
+      />
+
+      <Button
+        title="Guardar País"
+        onPress={()=>gurdarPais() }
+      />
+
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#F5F5F5",
+  },
+
+  titulo: {
+    fontSize: 28,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 20,
+    color: "#2C3E50",
+  },
+})
