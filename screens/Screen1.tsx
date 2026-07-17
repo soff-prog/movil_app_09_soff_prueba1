@@ -17,6 +17,8 @@ export default function Screen1() {
             capital: capital,
             continente: continente
         });
+        Alert.alert("Registro exitoso", "El país se agregó correctamente.");
+
   }
   
 
